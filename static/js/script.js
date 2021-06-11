@@ -41,6 +41,6 @@ var dataCollection = (day, month, year) => {
   let mm = monthCode[month - 1]; //month code
   let cc = centuryCode(Math.floor(year / 100)); // century code
   let yy = parseInt(year.slice(-2));
-  let dayOfBirth = (dd + mm + cc + yy + Math.floor(yy / 4)) % 7;
-  return daysOfTheWeek[dayOfBirth];
+  let dayOfBirthIndex = (dd + mm + cc + yy + Math.floor(yy / 4)) % noOfDays;
+  return daysOfTheWeek[dayOfBirthIndex];
 }
