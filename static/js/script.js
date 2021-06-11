@@ -10,6 +10,7 @@ var noOfDays = 7 //number of days in a week
 const totalDaysOfMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
   //...//
 var monthCode = [] //month code according to Gregian calendar system
+
 var monthCodeGenerator = () => {
     let mod = 0;
     for (let i = 0; i < totalDaysOfMonths.length; i++) {
@@ -37,10 +38,9 @@ var centuryCode = century => {
 //date of birth data collection function
 var dataCollection = (day, month, year) => {
   let dd = day;
-  let mm = monthCode[month - 1];
-  let cc = centuryCode(Math.floor(year / 100));
+  let mm = monthCode[month - 1]; //month code
+  let cc = centuryCode(Math.floor(year / 100)); // century code
   let yy = parseInt(year.slice(-2));
   let dayOfBirth = (dd + mm + cc + yy + Math.floor(yy / 4)) % 7;
-  console.log(daysOfTheWeek[dayOfBirth]);
+  return daysOfTheWeek[dayOfBirth];
 }
-dataCollection(1, 1, "2003");
