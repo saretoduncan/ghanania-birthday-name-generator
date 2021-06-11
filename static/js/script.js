@@ -37,7 +37,10 @@ var centuryCode = century => {
 //date of birth data collection function
 var dataCollection = (day, month, year) => {
   let dd = day;
-  let mm = month;
-  let cc = Math.floor(year / 100);
+  let mm = monthCode[month - 1];
+  let cc = centuryCode(Math.floor(year / 100));
   let yy = parseInt(year.slice(-2));
+  let dayOfBirth = (dd + mm + cc + yy + Math.floor(yy / 4)) % 7;
+  console.log(daysOfTheWeek[dayOfBirth]);
 }
+dataCollection(1, 1, "2003");
