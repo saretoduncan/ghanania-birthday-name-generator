@@ -5,7 +5,7 @@ const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", " Yaw", "Kofi", "Kwame
 const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 //...//
 const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] //Days of the week
-var noOfDays = 7 //number of days in a week
+const noOfDays = 7 //number of days in a week
   //total Days Of Months in a year
 const totalDaysOfMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
   //...//
@@ -35,12 +35,28 @@ var centuryCode = century => {
     return code;
   } // century code according to Gregian calendar system
 
+
 //date of birth data collection function
 var dataCollection = (day, month, year) => {
   let dd = day;
+
   let mm = monthCode[month - 1]; //month code
   let cc = centuryCode(Math.floor(year / 100)); // century code
   let yy = parseInt(year.slice(-2));
-  let dayOfBirthIndex = (dd + mm + cc + yy + Math.floor(yy / 4)) % noOfDays;
-  return daysOfTheWeek[dayOfBirthIndex];
+  let yearCode = (yy + Math.floor(yy / 4)) % noOfDays //year code)
+  let dayOfBirthIndex;
+
+  if ((((cc === 6 && yy === 0) || (yy % 4 === 0 && yy !== 0)) && ((month - 1) <= 1))) {
+    //leap year
+    dayOfBirthIndex = (yearCode + mm + cc + dd - 1) % noOfDays;
+
+  } else {
+    //ordinary year
+    dayOfBirthIndex = (dd + mm + cc + yy + Math.floor(yy / 4)) % noOfDays
+  }
+
+
+  return daysOfTheWeek[dayOfBirthIndex]
+
+
 }
