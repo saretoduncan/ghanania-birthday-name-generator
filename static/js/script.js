@@ -62,36 +62,37 @@ var dataCollection = (day, month, year) => {
 
 }
 let validation = (d, m) => {
-  if (d === "") {
-    alert("Please add day of birth")
-  } else if ((d <= 0) || (d > 31)) {
-    alert("invalid day")
+    if (d === "") {
+      alert("Please add day of birth")
+    } else if ((d <= 0) || (d > 31)) {
+      alert("invalid day")
 
-  }
-  if (m === "") {
-    alert("Please add Month Of Birth")
-  } else if ((m <= 0) || (m > 12)) {
-    alert("invalid month")
+    }
+    if (m === "") {
+      alert("Please add Month Of Birth")
+    } else if ((m <= 0) || (m > 12)) {
+      alert("invalid month")
 
-  }
-}
+    }
+  } // validation function
 
 var submission = e => {
   e.preventDefault();
 
-  let dayB = document.getElementById("day").value;
-  let monthB = document.getElementById("month").value;
-  let yearB = document.getElementById("year").value;
-  let birthIndex = dataCollection(dayB, monthB, yearB);
+  let dayB = document.getElementById("day").value; //day value
+  let monthB = document.getElementById("month").value; //month value
+  let yearB = document.getElementById("year").value; //year value
+  let birthIndex = dataCollection(dayB, monthB, yearB); //date of birth data collection function
   let output = document.getElementById("output");
   output.innerHTML = ""
   let form = document.getElementById("form");
-  validation(dayB, monthB);
+  validation(dayB, monthB); //validation
+
   if (document.getElementById("male").checked) {
     output.innerHTML = `Your Akan Name is ${maleNames[birthIndex]}<br/> You were born on ${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}`
   } else if (document.getElementById("female").checked) {
     output.innerHTML = `Your Akan Name is ${femaleNames[birthIndex]}<br/> 0AYou were born on ${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB} `
   }
-  form.reset();
+  form.reset(); //reset form after submission function
 }
-document.getElementById("submit").addEventListener('click', submission);
+document.getElementById("submit").addEventListener('click', submission); // submit button EventListener;
