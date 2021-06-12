@@ -7,6 +7,7 @@ const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] //Days of the week
 const noOfDays = 7 //number of days in a week
   //total Days Of Months in a year
+const monthsOfTheYear = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 const totalDaysOfMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
   //...//
 var monthCode = [] //month code according to Gregian calendar system
@@ -37,10 +38,10 @@ var centuryCode = century => {
 
 
 //date of birth data collection function
-var dataCollection = (day, month, year, gender) => {
-  let dd = day;
+var dataCollection = (day, month, year) => {
+  let dd = parseInt(day);
 
-  let mm = monthCode[month - 1]; //month code
+  let mm = monthCode[parseInt(month) - 1]; //month code
   let cc = centuryCode(Math.floor(year / 100)); // century code
   let yy = parseInt(year.slice(-2));
   let yearCode = (yy + Math.floor(yy / 4)) % noOfDays //year code)
@@ -60,9 +61,37 @@ var dataCollection = (day, month, year, gender) => {
 
 
 }
-var submission = () => {
+let validation = (d, m) => {
+  if (d === "") {
+    alert("Please add day of birth")
+  } else if ((d <= 0) || (d > 31)) {
+    alert("invalid day")
+
+  }
+  if (m === "") {
+    alert("Please add Month Of Birth")
+  } else if ((m <= 0) || (m > 12)) {
+    alert("invalid month")
+
+  }
+}
+
+var submission = e => {
+  e.preventDefault();
+
   let dayB = document.getElementById("day").value;
   let monthB = document.getElementById("month").value;
   let yearB = document.getElementById("year").value;
-
+  let birthIndex = dataCollection(dayB, monthB, yearB);
+  let output = document.getElementById("output");
+  output.innerHTML = ""
+  let form = document.getElementById("form");
+  validation(dayB, monthB);
+  if (document.getElementById("male").checked) {
+    output.innerHTML = `Your Akan Name is ${maleNames[birthIndex]}<br/> You were born on ${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}`
+  } else if (document.getElementById("female").checked) {
+    output.innerHTML = `Your Akan Name is ${femaleNames[birthIndex]}<br/> 0AYou were born on ${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB} `
+  }
+  form.reset();
 }
+document.getElementById("submit").addEventListener('click', submission);
