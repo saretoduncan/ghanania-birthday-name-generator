@@ -37,7 +37,7 @@ var centuryCode = century => {
 
 
 //date of birth data collection function
-var dataCollection = (day, month, year) => {
+var dataCollection = (day, month, year, gender) => {
   let dd = day;
 
   let mm = monthCode[month - 1]; //month code
@@ -56,7 +56,13 @@ var dataCollection = (day, month, year) => {
   }
 
 
-  return daysOfTheWeek[dayOfBirthIndex]
+  return dayOfBirthIndex;
 
+
+}
+var submission = () => {
+  let dayB = document.getElementById("day").value;
+  let monthB = document.getElementById("month").value;
+  let yearB = document.getElementById("year").value;
 
 }
