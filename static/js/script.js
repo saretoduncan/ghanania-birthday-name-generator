@@ -87,11 +87,12 @@ var submission = e => {
   output.innerHTML = ""
   let form = document.getElementById("form");
   validation(dayB, monthB); //validation
-
-  if (document.getElementById("male").checked) {
-    output.innerHTML = `Your Akan Name is ${maleNames[birthIndex]}<br/> You were born on ${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}`
-  } else if (document.getElementById("female").checked) {
-    output.innerHTML = `Your Akan Name is ${femaleNames[birthIndex]}<br/> 0AYou were born on ${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB} `
+  if ((dayB > 0 || monthB > 0) && (dayB < 31 || monthB < 12)) {
+    if (document.getElementById("male").checked) {
+      output.innerHTML = `Your Akan Name is ${maleNames[birthIndex]}<br/> You were born on ${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}`
+    } else if (document.getElementById("female").checked) {
+      output.innerHTML = `Your Akan Name is ${femaleNames[birthIndex]}<br/> 0AYou were born on ${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB} `
+    } else alert("Please Select You Gender")
   }
   form.reset(); //reset form after submission function
 }
