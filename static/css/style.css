@@ -1,20 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 * {
   padding: 0;
   margin: 0;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 body {
   background-image: url("../images/photo-1591161555818-7b9debeccc07.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: 'Playfair Display', serif;
   min-height: 100vh;
 }
 
-.frm-container {
+p {
+  text-shadow: 0 2px 1px black;
+  font-size: 23px;
+}
+
+.top-p {
+  min-width: 375px;
+}
+
+.form-label {
+  color: rgb(191, 238, 120);
+}
+
+.frm-container,
+.output {
   width: 375px;
-  background-color: rgba(17, 17, 17, 0.479);
+  background-color: rgba(17, 17, 17, 0.589);
   border-radius: 10px;
 }
 
-.form-container {}
+.output {
+  height: 100px;
+}
+
+.output p {
+  font-size: 18px;
+}
+
+.output p span {
+  color: greenyellow;
+}
