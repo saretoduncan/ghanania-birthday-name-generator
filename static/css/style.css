@@ -13,4 +13,8 @@ body {
 
 .frm-container {
   width: 375px;
+  background-color: rgba(17, 17, 17, 0.479);
+  border-radius: 10px;
 }
+
+.form-container {}
