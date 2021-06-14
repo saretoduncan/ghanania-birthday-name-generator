@@ -3,11 +3,15 @@
 * {
   padding: 0;
   margin: 0;
-  color: rgb(255, 255, 255);
+  color: rgb(255, 251, 0);
 }
 
 body {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
   background-image: url("../images/photo-1591161555818-7b9debeccc07.jpeg");
+  box-shadow: inset 0 0 0 50vw rgba(14, 8, 11, 0.3);
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Playfair Display', serif;
@@ -19,8 +23,48 @@ p {
   font-size: 23px;
 }
 
-.top-p {
-  min-width: 375px;
+.form-container {
+  height: 100vh;
+}
+
+.akan .t-h {
+  font-style: italic;
+  text-decoration: underline;
+  padding-bottom: 50px;
+  color: greenyellow
+}
+
+top-p p {
+  max-width: 500px;
+  line-height: 1
+}
+
+.top-p p a {
+  color: rgb(218, 218, 7);
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.gen-button {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.fom-cont {
+  display: none;
+}
+
+.flx {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 0 50vw rgba(14, 8, 11, 0.801);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .form-label {
@@ -30,8 +74,21 @@ p {
 .frm-container,
 .output {
   width: 375px;
-  background-color: rgba(17, 17, 17, 0.589);
+  background-color: rgba(17, 17, 17, 0.986);
   border-radius: 10px;
+}
+
+.clossing {
+  right: 10px;
+}
+
+.clossing i {
+  color: red;
+  font-size: 18px;
+}
+
+.clossing i:hover {
+  font-size: 20px;
 }
 
 .output {
