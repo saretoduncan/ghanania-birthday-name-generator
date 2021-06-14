@@ -84,14 +84,14 @@ var submission = e => {
   let yearB = document.getElementById("year").value; //year value
   let birthIndex = dataCollection(dayB, monthB, yearB); //date of birth data collection function
   let output = document.getElementById("output");
-  output.innerHTML = ""
+  output.innerHTML = "" // clear output
   let form = document.getElementById("form");
   validation(dayB, monthB); //validation
-  if ((dayB > 0 || monthB > 0) && (dayB < 31 || monthB < 12)) {
+  if ((dayB > 0 || monthB > 0) && (dayB < 31 || monthB < 12)) { //output validation
     if (document.getElementById("male").checked) {
-      output.innerHTML = `Your Akan Name is ${maleNames[birthIndex]}<br/> You were born on ${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}`
+      output.innerHTML = `Your Akan Name is <span>${maleNames[birthIndex]}</span> <br/> You were born on <span>${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}</span>`
     } else if (document.getElementById("female").checked) {
-      output.innerHTML = `Your Akan Name is ${femaleNames[birthIndex]}<br/> 0AYou were born on ${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB} `
+      output.innerHTML = `Your Akan Name is <span>${femaleNames[birthIndex]}</span> <br/> You were born on <span>${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}</span> `
     } else alert("Please Select You Gender")
   }
   form.reset(); //reset form after submission function
