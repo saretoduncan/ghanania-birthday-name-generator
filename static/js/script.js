@@ -96,4 +96,14 @@ var submission = e => {
   }
   form.reset(); //reset form after submission function
 }
+var generate = document.querySelector(".gen-button");
+var closeBtn = document.querySelector(".fa-times")
+generate.addEventListener("click", (e) => {
+  e.preventDefault()
+  document.querySelector(".fom-cont").classList.add("flx");
+})
+closeBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  document.querySelector(".fom-cont").classList.remove("flx");
+})
 document.getElementById("submit").addEventListener('click', submission); // submit button EventListener;
