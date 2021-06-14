@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+body {
+  background-image: url("../images/photo-1591161555818-7b9debeccc07.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.frm-container {
+  width: 375px;
+}
