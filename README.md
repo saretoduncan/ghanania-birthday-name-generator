@@ -64,7 +64,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Appreciation to  Moringa school for giving me this opportunity to learn :)
+- Appreciation to  Moringa school for giving me this opportunity to learn 😊
 
 ## 📝 License
 
