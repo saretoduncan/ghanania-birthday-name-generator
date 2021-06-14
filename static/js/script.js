@@ -61,7 +61,7 @@ var dataCollection = (day, month, year) => {
 
 
 }
-let validation = (d, m) => {
+let validation = (d, m, y) => {
     if (d === "") {
       alert("Please add day of birth")
     } else if ((d <= 0) || (d > 31)) {
@@ -74,6 +74,12 @@ let validation = (d, m) => {
       alert("invalid month")
 
     }
+    if (y === "") {
+      alert("Please add year Of Birth")
+    } else if (y <= 0) {
+      alert("invalid year")
+
+    }
   } // validation function
 
 var submission = e => {
@@ -84,10 +90,10 @@ var submission = e => {
   let yearB = document.getElementById("year").value; //year value
   let birthIndex = dataCollection(dayB, monthB, yearB); //date of birth data collection function
   let output = document.getElementById("output");
-  output.innerHTML = "" // clear output
+  output.innerHTML = "" // clear output after reload
   let form = document.getElementById("form");
-  validation(dayB, monthB); //validation
-  if ((dayB > 0 || monthB > 0) && (dayB < 31 || monthB < 12)) { //output validation
+  validation(dayB, monthB, yearB); //validation
+  if ((dayB > 0 && monthB > 0 && yearB > 0) && (dayB < 31 && monthB < 12 && yearB > 0)) { //output validation
     if (document.getElementById("male").checked) {
       output.innerHTML = `Your Akan Name is <span>${maleNames[birthIndex]}</span> <br/> You were born on <span>${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}</span>`
     } else if (document.getElementById("female").checked) {
@@ -96,14 +102,14 @@ var submission = e => {
   }
   form.reset(); //reset form after submission function
 }
-var generate = document.querySelector(".gen-button");
-var closeBtn = document.querySelector(".fa-times")
+var generate = document.querySelector(".gen-button"); //form display button
+var closeBtn = document.querySelector(".fa-times") //form closing button
 generate.addEventListener("click", (e) => {
   e.preventDefault()
-  document.querySelector(".fom-cont").classList.add("flx");
+  document.querySelector(".fom-cont").classList.add("flx"); //add display class
 })
 closeBtn.addEventListener('click', (e) => {
   e.preventDefault()
-  document.querySelector(".fom-cont").classList.remove("flx");
+  document.querySelector(".fom-cont").classList.remove("flx"); //remove display class
 })
 document.getElementById("submit").addEventListener('click', submission); // submit button EventListener;
