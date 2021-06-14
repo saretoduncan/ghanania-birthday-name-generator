@@ -6,49 +6,64 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/692524ab42.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./static/css/style.css">
-  <title>Document</title>
+  <link rel="icon" href="./static/images/icons8-child-with-pacifier-100.png" type="image/x-icon">
+  <title>Akan-name-generator</title>
 </head>
 
 <body>
-  <div class="container ">
-    <div class="container d-flex flex-column align-items-center form-container">
-      <h1>Akan Name</h1>
-      <div class="container-fluid top-p">
-        <p>The Akan people of Ghana frequently name their children after the day of the week they were born and the order in which they were born. These "day names" have further meanings concerning the soul and character of the person.<br> please fill in
-          the form below to check your akan name</p>
+  <div class="container-fluid ">
+    <div class="container-fluid   ">
+      <div class=" container d-flex flex-column justify-content-center form-container">
+        <div class="akan">
+          <h1 class="t-h">Akan Name</h1>
+        </div>
+
+        <div class="  top-p">
+          <p>The Akan people of Ghana frequently name their children after the day of the week they were born and the order in which they were born. These "day names" have further meanings concerning the soul and character of the person. click <a href="https://www.behindthename.com/names/usage/akan">here</a>            to check akan names and meaning.
+            <div>
+              <button class="btn btn-warning gen-button">Generate My Akan Name!</button>
+            </div>
+        </div>
       </div>
-      <form id="form" class="p-3 frm-container">
-        <div class="mb-3">
-          <label for="day" class="form-label">Day Of Birth</label>
-          <input type="number" class="form-control" id="day" required>
 
+      <div class=" container-fluid fom-cont">
+        <form id="form" class="position-relative p-3 frm-container">
+          <div class="position-absolute top-2 clossing">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </div>
           <div class="mb-3">
-            <label for="month" class="form-label">Month Of Birth</label>
-            <input type="number" class="form-control" id="month" required>
-          </div>
+            <label for="day" class="form-label">Day Of Birth</label>
+            <input type="number" class="form-control" id="day" required>
 
-          <div class="mb-3">
-            <label for="year" class="form-label">Year Of Birth</label>
-            <input type="number" class="form-control" id="year" required>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" required>
-            <label class="form-check-label" for="male">Male</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="option2">
-            <label class="form-check-label" for="female">Female</label>
-          </div>
-          <div class="form-check form-check-inline">
+            <div class="mb-3">
+              <label for="month" class="form-label">Month Of Birth</label>
+              <input type="number" class="form-control" id="month" required>
+            </div>
 
-          </div>
-          <div><button type="submit" id="submit" class="btn btn-primary">Submit</button></div>
+            <div class="mb-3">
+              <label for="year" class="form-label">Year Of Birth</label>
+              <input type="number" class="form-control" id="year" required>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" required>
+              <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="option2">
+              <label class="form-check-label" for="female">Female</label>
+            </div>
+            <div class="form-check form-check-inline">
 
-      </form>
-      </div>
-      <div class="container mt-2 output ">
-        <p id="output"></p>
+            </div>
+            <div><button type="submit" id="submit" class="btn btn-primary">Submit</button></div>
+
+        </form>
+        </div>
+        <div class="container mt-2 output ">
+          <p id="output"></p>
+        </div>
       </div>
     </div>
 
