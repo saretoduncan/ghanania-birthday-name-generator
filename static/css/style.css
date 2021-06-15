@@ -13,6 +13,7 @@ body {
   background-image: url("../images/photo-1591161555818-7b9debeccc07.jpeg");
   box-shadow: inset 0 0 0 50vw rgba(14, 8, 11, 0.3);
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   font-family: 'Playfair Display', serif;
   min-height: 100vh;
@@ -76,6 +77,7 @@ top-p p {
   width: 375px;
   background-color: rgba(17, 17, 17, 0.986);
   border-radius: 10px;
+  animation: ele 1.5s ease-in;
 }
 
 .clossing {
