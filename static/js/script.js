@@ -93,7 +93,7 @@ let submission = e => {
   output.innerHTML = "" // clear output after reload
   let form = document.getElementById("form");
   validation(dayB, monthB, yearB); //validation
-  if ((dayB > 0 && monthB > 0 && yearB > 0) && (dayB < 31 && monthB < 12 && yearB > 0)) { //output validation
+  if ((dayB > 0 && monthB > 0 && yearB > 0) && (dayB <= 31 && monthB <= 12 && yearB > 0)) { //output validation
     if (document.getElementById("male").checked) {
       output.innerHTML = `Your Akan Name is <span>${maleNames[birthIndex]}</span> <br/> You were born on <span>${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}</span>`
     } else if (document.getElementById("female").checked) {
