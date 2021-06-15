@@ -76,11 +76,20 @@ let validation = (d, m, y) => {
     }
     if (y === "") {
       alert("Please add year Of Birth")
-    } else if (y <= 0) {
+    } else if ((y <= 0) || (y.length > 4)) {
       alert("invalid year")
 
     }
   } // validation function
+let formOutPut = (dayB, monthB, yearB, birthIndex) => {
+  if ((dayB > 0 && monthB > 0 && yearB > 0) && (dayB <= 31 && monthB <= 12 && yearB > 0)) { //output validation
+    if (document.getElementById("male").checked) {
+      output.innerHTML = `Your Akan Name is <span>${maleNames[birthIndex]}</span> <br/> You were born on <span>${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}</span>`
+    } else if (document.getElementById("female").checked) {
+      output.innerHTML = `Your Akan Name is <span>${femaleNames[birthIndex]}</span> <br/> You were born on <span>${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}</span> `
+    } else alert("Please Select You Gender")
+  }
+}
 
 let submission = e => {
   e.preventDefault();
@@ -93,13 +102,7 @@ let submission = e => {
   output.innerHTML = "" // clear output after reload
   let form = document.getElementById("form");
   validation(dayB, monthB, yearB); //validation
-  if ((dayB > 0 && monthB > 0 && yearB > 0) && (dayB <= 31 && monthB <= 12 && yearB > 0)) { //output validation
-    if (document.getElementById("male").checked) {
-      output.innerHTML = `Your Akan Name is <span>${maleNames[birthIndex]}</span> <br/> You were born on <span>${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}</span>`
-    } else if (document.getElementById("female").checked) {
-      output.innerHTML = `Your Akan Name is <span>${femaleNames[birthIndex]}</span> <br/> You were born on <span>${daysOfTheWeek[birthIndex]} ${dayB}-${monthsOfTheYear[monthB-1]}-${yearB}</span> `
-    } else alert("Please Select You Gender")
-  }
+  formOutPut(dayB, monthB, yearB, birthIndex); // display function
   form.reset(); //reset form after submission function
 }
 let generate = document.querySelector(".gen-button"); //form display button
