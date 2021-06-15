@@ -10,9 +10,9 @@ const noOfDays = 7 //number of days in a week
 const monthsOfTheYear = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 const totalDaysOfMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
   //...//
-var monthCode = [] //month code according to Gregian calendar system
+let monthCode = [] //month code according to Gregian calendar system
 
-var monthCodeGenerator = () => {
+let monthCodeGenerator = () => {
     let mod = 0;
     for (let i = 0; i < totalDaysOfMonths.length; i++) {
       monthCode.push(mod);
@@ -22,7 +22,7 @@ var monthCodeGenerator = () => {
     return mod;
   } //month Code Generator
 monthCodeGenerator();
-var centuryCode = century => {
+let centuryCode = century => {
     let code;
     if (century % 4 === 0) {
       code = 6;
@@ -38,7 +38,7 @@ var centuryCode = century => {
 
 
 //date of birth data collection function
-var dataCollection = (day, month, year) => {
+let dataCollection = (day, month, year) => {
   let dd = parseInt(day);
 
   let mm = monthCode[parseInt(month) - 1]; //month code
@@ -82,7 +82,7 @@ let validation = (d, m, y) => {
     }
   } // validation function
 
-var submission = e => {
+let submission = e => {
   e.preventDefault();
 
   let dayB = document.getElementById("day").value; //day value
@@ -102,8 +102,8 @@ var submission = e => {
   }
   form.reset(); //reset form after submission function
 }
-var generate = document.querySelector(".gen-button"); //form display button
-var closeBtn = document.querySelector(".fa-times") //form closing button
+let generate = document.querySelector(".gen-button"); //form display button
+let closeBtn = document.querySelector(".fa-times") //form closing button
 generate.addEventListener("click", (e) => {
   e.preventDefault()
   document.querySelector(".fom-cont").classList.add("flx"); //add display class
